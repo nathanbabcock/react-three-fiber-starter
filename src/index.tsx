@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom'
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 import { Mesh } from 'three'
+import './index.scss'
 
 function Box(props: any) {
   // This reference will give us direct access to the mesh
@@ -31,11 +32,13 @@ function Box(props: any) {
 }
 
 ReactDOM.render(
-  <Canvas>
-    <ambientLight />
-    <pointLight position={[10, 10, 10]} />
-    <Box position={[-1.2, 0, 0]} />
-    <Box position={[1.2, 0, 0]} />
-  </Canvas>,
+  <div style={{ width: "100vw", height: "100vh" }}>
+    <Canvas>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Box position={[-1.2, 0, 0]} />
+      <Box position={[1.2, 0, 0]} />
+    </Canvas>
+  </div>,
   document.getElementById('root')
 )
